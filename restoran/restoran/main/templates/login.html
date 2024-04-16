@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title>Prosto</title>
+    <link rel="stylesheet" href="../static/reg.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="wrapper">
+            <h1>Login</h1>
+<form method="post">
+{% for field in form %}
+    <div class="fieldWrapper">
+        {% csrf_token %}
+        {{ field.errors }}<br>
+        {{ field.label_tag }} {{ field }}
+    </div>
+{% endfor %}
+    <button type="submit">Login</button>
+</form>
+            <h3><a href="http://127.0.0.1:8000/registration/">
+            Haven`t an account?
+        </a><a href="http://127.0.0.1:8000/reset_password/">Forgot password?</a></h3>
+    </div>
+
+</body>
+
+</html>
